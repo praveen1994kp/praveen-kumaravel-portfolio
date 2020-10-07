@@ -1,0 +1,64 @@
+:root {
+  --primary: #2962ff;
+  --on-primary: #ffffff;
+  --background-surface: #fffefb;
+}
+
+body {
+  background: var(--background-surface);
+  font-family: "Open Sans", sans-serif;
+}
+
+.app-container {
+    margin: 0 1rem;
+}
+
+.hero {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-size: 1.8em;
+  border-radius: 2em;
+}
+
+.hero {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 6rem auto 2rem auto;
+    padding: 1em .2rem;
+}
+
+.hero-title {
+  flex: 0 1 20ch;
+  line-height: 1.1;
+  margin: auto 1rem;
+}
+
+.hero-img {
+    display: flex;
+}
+
+.hero-img img {
+    border-radius: 5rem;
+    margin: auto;
+}
+
+.main-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    max-width: 90ch;
+}
+
+@media only screen and (min-width:1200px) {
+  .app-container {
+    margin: 0 9rem;
+  }
+  .main-paragraph {
+    margin-left: .8rem;
+  }
+  .hero {
+    font-size: 2em;
+    padding: 1em;
+  }
+}
