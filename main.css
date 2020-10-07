@@ -45,9 +45,13 @@ body {
 }
 
 .main-paragraph {
-    font-size: 1.125rem;
+    font-size: 1.125em;
     line-height: 1.5;
     max-width: 90ch;
+}
+
+.roles p {
+  font-size: 1.125em;
 }
 
 @media only screen and (min-width:1200px) {
