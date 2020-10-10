@@ -10,7 +10,7 @@ body {
 }
 
 .app-container {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 .hero {
@@ -21,12 +21,12 @@ body {
 }
 
 .hero {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 6rem auto 2rem auto;
-    padding: 1em .2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 6rem auto 2rem auto;
+  padding: 1em 0.2rem;
 }
 
 .hero-title {
@@ -36,33 +36,79 @@ body {
 }
 
 .hero-img {
-    display: flex;
+  display: flex;
 }
 
 .hero-img img {
-    border-radius: 5rem;
-    margin: auto;
+  border-radius: 5rem;
+  margin: auto;
 }
 
 .main-paragraph {
-    font-size: 1.125em;
-    line-height: 1.5;
-    max-width: 90ch;
+  font-size: 1.125em;
+  line-height: 1.5;
+  max-width: 80ch;
 }
 
 .roles p {
   font-size: 1.125em;
 }
 
-@media only screen and (min-width:1200px) {
+.roles h4 {
+  font-size: 1.25em;
+}
+
+.roles {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  flex: 0 1 20rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card {
+  border-radius: 1.5rem;
+  box-shadow: 0 0 5px rgba(0,0,0,70%);
+}
+
+.card h3 {
+  margin: 0;
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 1rem;
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+}
+
+.card p {
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.card :last-child {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 1200px) {
   .app-container {
     margin: 0 9rem;
   }
   .main-paragraph {
-    margin-left: .8rem;
+    margin-left: 0.8rem;
   }
   .hero {
     font-size: 2em;
     padding: 1em;
+  }
+  .card {
+    min-height: 30rem;
   }
 }
