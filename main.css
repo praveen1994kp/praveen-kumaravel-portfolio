@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
   --primary: #2962ff;
   --on-primary: #ffffff;
   --background-surface: #fffefb;
+  --secondary-background: #f7f9fa;
 }
 
 body {
   background: var(--background-surface);
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Poppins', "Open Sans", sans-serif;
 }
 
 .app-container {
@@ -97,6 +100,55 @@ body {
   margin-bottom: 2rem;
 }
 
+.roles,
+.journey {
+  margin-top: 5rem;
+}
+
+.intro-line {
+  text-align: center;
+}
+
+.story {
+  background: var(--secondary-background);
+  padding: 1.5em .5em;
+  margin: 2rem 0;
+}
+
+.content p {
+  line-height: 2;
+}
+
+ul.pills {
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  max-width: 30rem;
+}
+
+.pills .pill {
+  padding: .2rem .8rem;
+  border-radius: 2rem;
+  font-size: .9em;
+  font-weight: 500;
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.header h3 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 0;
+}
+
+.header time {
+  display: block;
+}
+
 @media only screen and (min-width: 1200px) {
   .app-container {
     margin: 0 9rem;
@@ -110,5 +162,8 @@ body {
   }
   .card {
     min-height: 30rem;
+  }
+  .story {
+    padding: 1.5rem;
   }
 }
