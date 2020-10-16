@@ -8,14 +8,72 @@
   --main-color: rgb(5, 5, 5);
 }
 
+.dark {
+  --background-surface: #232323;
+  --secondary-background: #404040;
+  --main-color: rgb(249 249 249);
+}
+
+.light {
+  --background-surface: #fffefb;
+  --secondary-background: #f7f9fa;
+  --main-color: rgb(5, 5, 5);
+}
+
+.accent__green {
+  --primary: #4CAF50;
+}
+
+.accent__pink {
+  --primary: #ec407a;
+}
+
 body {
   background: var(--background-surface);
   font-family: 'Poppins', "Open Sans", sans-serif;
   color: var(--main-color);
+  transition: all .3s;
 }
 
 .app-container {
   margin: 0 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header ul.control-group {
+  margin: 0 1rem 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#theme-toggle {
+  --light-theme: #f07b2d;
+  --light-theme-hov: #f8de4c;
+  --dark-theme:#f8de4c;
+  --dark-theme-hov:#f07b2d;
+  cursor: pointer;
+}
+
+#theme-toggle .fa-sun {
+  color: var(--light-theme);
+  transition: color .5s;
+}
+
+#theme-toggle .fa-moon {
+  color: var(--dark-theme);
+  transition: color .5s;
+}
+
+#theme-toggle:hover .fa-sun {
+  color: var(--light-theme-hov);
+}
+
+#theme-toggle:hover .fa-moon {
+  color: var(--dark-theme-hov);
 }
 
 .hero {
@@ -30,7 +88,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   gap: 1.5rem;
-  margin: 6rem auto 2rem auto;
+  margin: 2rem auto 2rem auto;
   padding: 1em 0.2rem;
 }
 
@@ -74,7 +132,7 @@ body {
 }
 
 .card {
-  flex: 0 1 20rem;
+  flex: 0 1 18rem;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -198,3 +256,18 @@ ul.contacts {
     padding: 1.5rem;
   }
 }
+
+/*@media (prefers-color-scheme: dark) {
+  body {
+    --background-surface: #232323;
+    --secondary-background: #404040;
+    --main-color: rgb(249 249 249);
+  }  
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --background-surface: #fffefb;
+    --secondary-background: #f7f9fa;
+    --main-color: rgb(5, 5, 5);
+  }  
+}*/
