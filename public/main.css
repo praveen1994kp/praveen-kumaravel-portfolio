@@ -6,6 +6,7 @@
   --background-surface: #fffefb;
   --secondary-background: #f7f9fa;
   --main-color: rgb(5, 5, 5);
+  --accent-transition: background .5s;
 }
 
 .dark {
@@ -28,6 +29,14 @@
   --primary: #ec407a;
 }
 
+.accent__cyan {
+  --primary: #009688
+}
+
+.accent__orange {
+  --primary: #ff7043;
+}
+
 body {
   background: var(--background-surface);
   font-family: 'Poppins', "Open Sans", sans-serif;
@@ -48,6 +57,9 @@ header ul.control-group {
   margin: 0 1rem 0 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
 }
 
 #theme-toggle {
@@ -56,6 +68,7 @@ header ul.control-group {
   --dark-theme:#f8de4c;
   --dark-theme-hov:#f07b2d;
   cursor: pointer;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 #theme-toggle .fa-sun {
@@ -76,11 +89,26 @@ header ul.control-group {
   color: var(--dark-theme-hov);
 }
 
+#accent-toggle {
+  cursor: pointer;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
+#accent-toggle .fa-palette {
+  color: var(--primary);
+  transition: all .5s;
+}
+
+#accent-toggle:hover .fa-palette {
+  filter: brightness(1.5);
+}
+
 .hero {
   background-color: var(--primary);
   color: var(--on-primary);
   font-size: 1.8em;
   border-radius: 2em;
+  transition: var(--accent-transition);
 }
 
 .hero {
@@ -151,6 +179,7 @@ header ul.control-group {
   padding: 1rem;
   border-top-right-radius: 1.5rem;
   border-top-left-radius: 1.5rem;
+  transition: var(--accent-transition);
 }
 
 .card p {
@@ -200,6 +229,7 @@ ul.pills {
   font-weight: 500;
   background: var(--primary);
   color: var(--on-primary);
+  transition: var(--accent-transition);
 }
 
 .header h3 {
@@ -215,6 +245,7 @@ ul.pills {
 
 .contacts {
   color: var(--primary);
+  transition: var(--accent-transition);
 }
 
 ul.contacts {
@@ -228,6 +259,66 @@ ul.contacts {
 
 .contacts a{
   color: inherit;
+}
+
+.contact-info i {
+  transition: all .3s;
+}
+
+.contact-info:hover i {
+  transform: scale(1.5);
+  filter: brightness(1.2);
+}
+
+.email {
+  position: relative;
+}
+
+.email .on-hover {
+  display: inline;
+  position: absolute;
+  z-index: 1;
+  padding: .7rem 0;
+  background: var(--secondary-background);
+  color: var(--main-color);
+  border-radius: 1rem;
+  left: 140%;
+  max-width: 0;
+  transition: max-width .25s;
+  overflow-x: hidden;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+.on-hover span {
+  padding: 0 .7rem;
+}
+
+.email:hover .on-hover {
+  max-width: 15rem;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 5rem;
+  background: var(--primary);
+  padding: .5rem;
+  border-radius: 1rem;
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: all .3s;
+}
+
+.toast-container.show {
+  transform: translateY(0rem);
+  opacity: 1;
+}
+
+footer {
+  margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 1200px) {
