@@ -34,5 +34,24 @@ function colorPaletteListeners() {
         classList.add(nextAccent);
     })
 }
+
+function showToast(message) {
+    const toastContainer = document.getElementById('toast');
+    toastContainer.innerHTML = message;
+    toastContainer.classList.add('show');
+    setTimeout(function() {
+        toastContainer.classList.remove('show')
+    }, 2000);
+}
+
+function copyEmailOnClickListener() {
+    const emailText = document.querySelector('.on-hover');
+    emailText.addEventListener('click', function (ev) {
+        document.execCommand("copy");
+        showToast('Copied to clipboard!')
+    })
+}
+
+copyEmailOnClickListener();
 themeToggleListeners();
 colorPaletteListeners();

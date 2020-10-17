@@ -300,6 +300,23 @@ ul.contacts {
   max-width: 15rem;
 }
 
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 5rem;
+  background: var(--primary);
+  padding: .5rem;
+  border-radius: 1rem;
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: all .3s;
+}
+
+.toast-container.show {
+  transform: translateY(0rem);
+  opacity: 1;
+}
+
 footer {
   margin-bottom: 3rem;
 }
