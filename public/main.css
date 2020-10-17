@@ -290,6 +290,7 @@ ul.contacts {
   -moz-user-select: all;
   -ms-user-select: all;
   user-select: all;
+  box-shadow: 0 0 5px rgba(0,0,0,70%);
 }
 
 .on-hover span {
@@ -305,11 +306,13 @@ ul.contacts {
   bottom: 2rem;
   right: 5rem;
   background: var(--primary);
+  color: var(--on-primary);
   padding: .5rem;
   border-radius: 1rem;
   transform: translateY(10rem);
   opacity: 0;
   transition: all .3s;
+  box-shadow: 0 0 5px rgba(0,0,0,70%);
 }
 
 .toast-container.show {

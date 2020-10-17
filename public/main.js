@@ -16,6 +16,31 @@ function themeToggleListeners() {
     })
 }
 
+function updateThemeBasedOnPref() {
+    const { classList } = document.body;
+    const isDark = classList.contains('dark')
+    const toggleIcon = document.querySelector('#theme-toggle i');
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (!isDark) {
+            classList.add('dark');
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+        }
+    } else {
+        if (isDark) {
+            classList.remove('dark')
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+        }
+    }
+}
+
+function themeListener() {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+        updateThemeBasedOnPref();
+      });
+}
+
 function findNextAccent(currAccent) {
     const nextAccentIndex = (colorPalette.findIndex(accent => accent == currAccent) + 1)
         % colorPalette.length;
@@ -39,7 +64,7 @@ function showToast(message) {
     const toastContainer = document.getElementById('toast');
     toastContainer.innerHTML = message;
     toastContainer.classList.add('show');
-    setTimeout(function() {
+    setTimeout(function () {
         toastContainer.classList.remove('show')
     }, 2000);
 }
@@ -51,7 +76,8 @@ function copyEmailOnClickListener() {
         showToast('Copied to clipboard!')
     })
 }
-
+themeListener();
 copyEmailOnClickListener();
 themeToggleListeners();
 colorPaletteListeners();
+updateThemeBasedOnPref();
