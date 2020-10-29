@@ -1,4 +1,4 @@
-const colorPalette = ['accent__green', 'accent__pink', 'accent__cyan', 'accent__orange'];
+const colorPalette = ['accent__green', 'accent__pink', 'accent__cyan', 'accent__teal'];
 
 function themeToggleListeners() {
     const themeToggle = document.getElementById('theme-toggle');
@@ -56,9 +56,22 @@ function colorPaletteListeners() {
         const currAccent = _classList.find(cl => cl.startsWith('accent__'));
         classList.remove(currAccent);
         const nextAccent = findNextAccent(currAccent);
+        localStorage.setItem('--pk-accent', nextAccent);
         classList.add(nextAccent);
     })
 }
+
+function updateSavedAccent() {
+    const savedAccent = localStorage.getItem('--pk-accent');
+    if(savedAccent && savedAccent.startsWith('accent__')) {
+        const { classList } = document.body;
+        const _classList = [...classList]
+        const currAccent = _classList.find(cl => cl.startsWith('accent__'));
+        classList.remove(currAccent);
+        classList.add(savedAccent);
+    }
+}
+
 
 function showToast(message) {
     const toastContainer = document.getElementById('toast');
@@ -81,3 +94,4 @@ copyEmailOnClickListener();
 themeToggleListeners();
 colorPaletteListeners();
 updateThemeBasedOnPref();
+updateSavedAccent();
