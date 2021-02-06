@@ -5,9 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praveen Kumaravel</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link 
+        rel="preload" 
+        href="main.css"
+        as="style" 
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link 
+        rel="preload" 
+        href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        as="style" 
+        onload="this.onload=null;this.rel='stylesheet'"
+        crossorigin="anonymous"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp">
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+    </noscript>
     <script src="main.js" defer></script>
 </head>
 
@@ -19,7 +35,7 @@
         </ul>
     </header>
     <main class="app-container">
-        <section class="intro">
+        <section>
             <section class="hero">
                 <picture class="hero-img">
                     <img src="assets/hero.jpg" alt="A photo of me">
@@ -203,7 +219,7 @@
                 </p>
                 <ul class="contacts">
                     <li class="contact-info email">
-                        <a target="_blank" href="mailto:thisispraveenk@gmail.com"><i
+                        <a  target="_blank" href="mailto:thisispraveenk@gmail.com"><i
                                 class="far fa-envelope fa-3x"></i></a>
                         <div class="on-hover"><span>thisispraveenk@gmail.com</span></div>
                             </li>
