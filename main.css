@@ -122,7 +122,7 @@ header ul.control-group {
 }
 
 .hero-title {
-  flex: 0 1 20ch;
+  flex: 0 1 28ch;
   line-height: 1.1;
   margin: auto 1rem;
 }
@@ -135,13 +135,13 @@ header ul.control-group {
   width: 15rem;
   border-radius: 5rem;
   margin: auto;
-  filter: grayscale();
 }
 
-.main-paragraph {
+.main-paragraph  p{
   font-size: 1.125em;
   line-height: 1.5;
   max-width: 80ch;
+  margin: 0 auto;
 }
 
 .roles p {
@@ -331,10 +331,6 @@ footer {
 @media only screen and (min-width: 1200px) {
   .app-container {
     margin: 0 9rem;
-  }
-
-  .main-paragraph {
-    margin-left: 0.8rem;
   }
 
   .hero-img img {
