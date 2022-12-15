@@ -186,6 +186,7 @@ header ul.control-group {
 }
 
 .card p {
+  flex-basis: 10rem;
   padding: 1rem;
   line-height: 1.5;
 }
